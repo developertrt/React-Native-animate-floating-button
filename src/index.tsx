@@ -12,9 +12,11 @@ interface prop {
   iconColors: string
   menuImage: any
   images: any
+  onIconClick: (index: number)=>void
+  onMenuClick: (index: boolean)=>void
 }
 
-export const AnimatedFloatingButton = ({ iconColors, style, menuImage, images }: prop) => {
+export const AnimatedFloatingButton = ({ iconColors, style, menuImage, images, onIconClick, onMenuClick }: prop) => {
 
   let animation = new Animated.Value(0)
   let open = true
@@ -25,7 +27,9 @@ export const AnimatedFloatingButton = ({ iconColors, style, menuImage, images }:
       <>
         {
           images.map((res: any, index: number) => (
-            <TouchableWithoutFeedback key={index} >
+            <TouchableWithoutFeedback key={index} onPress={()=>{
+              onIconClick(index)
+            }}>
               <Animated.View style={[styles.second, heart(index)]}>
                 <Image source={res.image} style={{ height: 20, width: 20, tintColor: iconColors }} />
               </Animated.View>
@@ -79,7 +83,9 @@ export const AnimatedFloatingButton = ({ iconColors, style, menuImage, images }:
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       {renderImages()}
-      <TouchableWithoutFeedback onPress={() => togglemenu()}>
+      <TouchableWithoutFeedback onPress={() => {
+        onMenuClick(!open)
+        togglemenu()}}>
         <Animated.View style={[styles.button, style, rotation]}>
           <Image source={menuImage} style={{ height: 15, width: 15, tintColor: 'black' }} />
         </Animated.View>

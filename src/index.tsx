@@ -11,15 +11,31 @@ interface prop {
   style: any
   iconColors: string
   menuImage: any
-  image1: any
-  image2: any
-  image3: any
+  images: any
 }
 
-export const AnimatedFloatingButton = ({ iconColors, style, menuImage, image1, image2, image3 }: prop) => {
+export const AnimatedFloatingButton = ({ iconColors, style, menuImage, images }: prop) => {
 
   let animation = new Animated.Value(0)
   let open = true
+  let outrange = -80
+
+  const renderImages = () => {
+    return (
+      <>
+        {
+          images.map((res: any, index: number) => (
+            <TouchableWithoutFeedback key={index} >
+              <Animated.View style={[styles.second, heart(index)]}>
+                <Image source={res.image} style={{ height: 20, width: 20, tintColor: iconColors }} />
+              </Animated.View>
+            </TouchableWithoutFeedback>
+          )
+          )
+        }
+      </>
+    )
+  }
 
   const togglemenu = () => {
     const toValue = open ? 0 : 1;
@@ -32,42 +48,21 @@ export const AnimatedFloatingButton = ({ iconColors, style, menuImage, image1, i
     open = !open
   }
 
-  const heart = {
-    transform: [
-      { scale: animation },
-      {
-        translateY: animation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, -200]
-        })
-      }
-    ]
-  }
-
-
-  const thumb = {
-    transform: [
-      { scale: animation },
-      {
-        translateY: animation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, -140]
-        })
-      }
-    ]
-  }
-
-
-  const pin = {
-    transform: [
-      { scale: animation },
-      {
-        translateY: animation.interpolate({
-          inputRange: [0, 1],
-          outputRange: [0, -80]
-        })
-      }
-    ]
+  const heart = (index: number) => {
+    if (index === 0) outrange
+    else outrange = outrange - 60
+    let res = {
+      transform: [
+        { scale: animation },
+        {
+          translateY: animation.interpolate({
+            inputRange: [0, 1],
+            outputRange: [0, outrange]
+          })
+        }
+      ]
+    }
+    return res
   }
 
   const rotation = {
@@ -83,24 +78,10 @@ export const AnimatedFloatingButton = ({ iconColors, style, menuImage, image1, i
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <TouchableWithoutFeedback >
-        <Animated.View style={[styles.second, heart]}>
-          <Image source={image3} style={{ height: 20, width: 20, tintColor: iconColors }} />
-        </Animated.View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <Animated.View style={[styles.second, thumb]}>
-          <Image source={image2} style={{ height: 20, width: 20, tintColor: iconColors }} />
-        </Animated.View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <Animated.View style={[styles.second, pin]}>
-          <Image source={image1} style={{ height: 20, width: 20, tintColor: iconColors }} />
-        </Animated.View>
-      </TouchableWithoutFeedback>
+      {renderImages()}
       <TouchableWithoutFeedback onPress={() => togglemenu()}>
         <Animated.View style={[styles.button, style, rotation]}>
-          <Image source={menuImage} style={{ height: 15, width: 15, tintColor: 'black'}} />
+          <Image source={menuImage} style={{ height: 15, width: 15, tintColor: 'black' }} />
         </Animated.View>
       </TouchableWithoutFeedback>
     </View>

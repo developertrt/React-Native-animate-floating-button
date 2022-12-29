@@ -41,11 +41,15 @@ let images = [
 ### Properties
 | Name                 | Description                                                                                                                                                                                                                                                                                          | Type                                                   |                   Default Value                   |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|:-------------------------------------------------:|
-| `images`                | how many item show in child array of image                                                                                                                                                                                                                                                                              | array                                                 |                  _**required**_                   |
-| `menuImage`                | menu list icon                                                                                                                                                                                                                                                                              | image                                                 |                  _**required**_                   |
+| `images`                | how many item show in child array of image                                                                                                                                                                                                                                                                              | array                                                 |                  _**required**_                   |   
+| `menuImage`                | menu list icon                                                                                                                                                                                                                                                                               | image                                                 |                  _**required**_                   |
 
-| `onMenuClick`        |  retrun menu is open or not  |
+| `onMenuClick`        |  retrun menu is
+open or not                                                                                                  
+                                                                                                             |
 `()=>Node`                                            |                  _**required**_                    |
 
-| `onIconClick`        |  retrun icon index when you click  |
+| `onIconClick`        |  retrun icon index
+ when you click  
+                                                                                                             | 
 `()=>Node`                                            |                  _**required**_                    |

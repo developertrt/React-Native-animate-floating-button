@@ -2,8 +2,8 @@
 
 animated button
 
-![animated image example](https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mov)
-<!-- <img src="https://github.com/Rutvik1842/react-native-animated-floating-button/blob/main/images/demo.png" style="border:5px;" width="200" hight="200" title="react-native-animated-floating-button"> -->
+<!-- ![animated image example](https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4) -->
+<img src="https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4" style="border:5px;" width="200" hight="200" title="react-native-animated-floating-button">
 
 ## Installation
 

@@ -2,8 +2,8 @@
 
 animated button
 
-<!-- ![animated image example](https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4) -->
-<img src="https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4" style="border:5px;" width="200" hight="200" title="react-native-animated-floating-button">
+![animated button example](https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4)
+<!-- <img src="https://github.com/developertrt/React-native-animate-floating-button/blob/main/images/demo.mp4" style="border:5px;" width="200" hight="200" title="react-native-animated-floating-button"> -->
 
 ## Installation
 
@@ -43,12 +43,10 @@ let images = [
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|:-------------------------------------------------:|
 | `images`                | how many item show in child array of image                                                                                                                                                                                                                                                                              | array                                                 |                  _**required**_                   |   
 | `menuImage`                | menu list icon                                                                                                                                                                                                                                                                               | image                                                 |                  _**required**_                   |
-
 | `onMenuClick`        |  retrun menu is
 open or not                                                                                                  
                                                                                                              |
 `()=>Node`                                            |                  _**required**_                    |
-
 | `onIconClick`        |  retrun icon index
  when you click  
                                                                                                              | 

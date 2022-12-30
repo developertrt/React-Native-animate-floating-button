@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOffset: { height: 10, width: 0 },
     shadowColor: '#F02A4B',
-    elevation: 5
+    elevation: 10,
   },
   second: {
     position: 'absolute',

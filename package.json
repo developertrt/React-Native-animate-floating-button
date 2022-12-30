@@ -1,6 +1,6 @@
 {
   "name": "react-native-animated-floating-button",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "test",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -36,8 +36,14 @@
     "react-component",
     "react-native-component",
     "android",
-    "ios"
-  ],
+    "ios",
+    "animated",
+    "floating",
+    "button",
+    "floating-button",
+    "float-action",
+    "floating-action"
+],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/developertrt/React-Native-animate-floating-button"

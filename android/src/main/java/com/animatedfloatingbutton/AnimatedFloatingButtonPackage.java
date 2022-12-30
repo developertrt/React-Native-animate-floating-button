@@ -17,7 +17,7 @@ public class AnimatedFloatingButtonPackage extends TurboReactPackage {
   @Override
   public NativeModule getModule(String name, ReactApplicationContext reactContext) {
     if (name.equals(AnimatedFloatingButtonModule.NAME)) {
-      return new AnimatedFloatingButtonModule(reactContext);
+      return (NativeModule) new AnimatedFloatingButtonModule(reactContext);
     } else {
       return null;
     }

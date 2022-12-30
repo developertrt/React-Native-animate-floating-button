@@ -5,15 +5,13 @@ import androidx.annotation.NonNull;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.module.annotations.ReactModule;
 
-@ReactModule(name = AnimatedFloatingButtonModule.NAME)
-public class AnimatedFloatingButtonModule extends NativeAnimatedFloatingButtonSpec {
+public class AnimatedFloatingButtonModule {
   public static final String NAME = "AnimatedFloatingButton";
 
   public AnimatedFloatingButtonModule(ReactApplicationContext reactContext) {
-    super(reactContext);
+    super();
   }
 
-  @Override
   @NonNull
   public String getName() {
     return NAME;
